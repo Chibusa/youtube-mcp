@@ -1,8 +1,9 @@
 # YouTube MCP for Claude
 
 A personal YouTube MCP server that Claude (web and mobile) can use as a custom connector. It runs
-[zubeid-youtube-mcp-server](https://github.com/ZubeidHendricks/youtube-mcp-server) behind
-[supergateway](https://github.com/supercorp-ai/supergateway), exposed over Streamable HTTP on Render's free tier.
+[zubeid-youtube-mcp-server](https://github.com/ZubeidHendricks/youtube-mcp-server) in a single Node process
+(`server.mjs`), exposed over Streamable HTTP on Render's free tier. One process keeps memory around 140 MB,
+well inside the free tier's 512 MB.
 
 ## Tools
 

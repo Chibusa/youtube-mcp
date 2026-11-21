@@ -4,13 +4,12 @@
   "private": true,
   "description": "Personal YouTube MCP server for Claude (search, video details, transcripts) over Streamable HTTP",
   "scripts": {
-    "start": "sh ./start.sh"
+    "start": "node server.mjs"
   },
   "engines": {
     "node": ">=20"
   },
   "dependencies": {
-    "supergateway": "4.2.2",
     "zubeid-youtube-mcp-server": "1.0.2"
   }
 }
