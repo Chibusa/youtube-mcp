@@ -24,7 +24,7 @@ Claude's custom connectors cannot send custom headers, so the endpoint lives at 
 https://<your-service>.onrender.com/<MCP_SECRET>/mcp
 ```
 
-Anyone without the full URL gets a 404. Treat the URL like a password. If it leaks, change `MCP_SECRET` in Render and update the connector.
+Only the letters and digits of `MCP_SECRET` are used: remove any `+`, `/` or `=` when building the URL. Anyone without the full URL gets a 404. Treat the URL like a password. If it leaks, change `MCP_SECRET` in Render and update the connector.
 
 ## Setup
 
@@ -40,7 +40,7 @@ Anyone without the full URL gets a 404. Treat the URL like a password. If it lea
 1. Render dashboard → **New → Blueprint** → connect this repo. Render reads `render.yaml`.
 2. When asked, paste your key into `YOUTUBE_API_KEY`. `MCP_SECRET` is generated for you.
 3. After the deploy, open the service → **Environment** and copy the value of `MCP_SECRET`.
-4. Your connector URL is `https://<service-name>.onrender.com/<MCP_SECRET>/mcp`.
+4. Your connector URL is `https://<service-name>.onrender.com/<MCP_SECRET>/mcp`, with any `+`, `/` or `=` removed from the secret.
 5. Check it is alive: `https://<service-name>.onrender.com/healthz` should return `ok`.
 
 ### 3. Connect to Claude
